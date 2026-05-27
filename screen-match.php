@@ -12,8 +12,6 @@ $sumOfNotes = 0;
 
 $numberOfRatings = $argc -1;
 
-$teste = "teste";
-
 //for (inicializacao; condicao da repeticao, incremento)
 for ($contador = 1; $contador < $argc; $contador++) {
     $sumOfNotes += $argv[$contador];
