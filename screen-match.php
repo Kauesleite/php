@@ -10,12 +10,22 @@ $releaseYear = 2022;
 
 $sumOfNotes = 0;
 
-$numberOfRatings = $argc -1;
+$numberOfRatings = $argc - 1;
 
 //for (inicializacao; condicao da repeticao, incremento)
 for ($contador = 1; $contador < $argc; $contador++) {
     $sumOfNotes += $argv[$contador];
 }
+
+$contador = 1;
+
+// while ($argv[$contador] != 0) {
+//     $sumOfNotes += $argv[$contador++];
+// }
+
+// existe um loop chamado do{} while(); onde a gente primeiro executa algo e dps verifica a condicao
+
+
 
 $rating = $sumOfNotes / $numberOfRatings;
 
@@ -30,7 +40,7 @@ echo "Nome do filme: $movieName\n";
 echo "Nota do filme: $rating\n";
 echo "Ano de lançamento: $releaseYear\n";
 
-if ($releaseYear > 2022) {
+if ($releaseYear > 2024) {
     echo "Esse filme é uma lançamento\n";
 }elseif($releaseYear<2022 && $releaseYear>2020){
     echo "Relativamente novo\n";
