@@ -8,16 +8,22 @@ echo "Welcome to CineGibi!\n";
 $movieName = "Top Gun - Maverick"; 
 $releaseYear = 2022;
 
-$sumOfNotes = 0;
+$notes = [];
 
 $numberOfRatings = $argc - 1;
 
 //for (inicializacao; condicao da repeticao, incremento)
 for ($contador = 1; $contador < $argc; $contador++) {
-    $sumOfNotes += $argv[$contador];
+    $notes[] = (float) $argv[$contador];
 }
+$somasDasNotas = array_sum($notes);
 
-$contador = 1;
+//soma das notas
+// foreach($notes as $note){
+//     $somasDasNotas += $note;
+// }
+
+// $contador = 1;
 
 // while ($argv[$contador] != 0) {
 //     $sumOfNotes += $argv[$contador++];
@@ -27,7 +33,7 @@ $contador = 1;
 
 
 
-$rating = $sumOfNotes / $numberOfRatings;
+$rating = $somasDasNotas / $numberOfRatings;
 
 $primePlan = true;
 
@@ -57,4 +63,7 @@ $gender = match ($movieName) {
 
 echo "O genero do filme é: $gender\n";
 
-echo $argc;
+
+
+
+
