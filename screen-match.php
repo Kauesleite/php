@@ -1,69 +1,58 @@
 <?php
 
-echo "Welcome to CineGibi!\n";
-//argv argc é referente aos argumentos
-//argv é um array que pega os valores de cada argumento passado como parametro na chamada do script
-//argc é a quantidade de parametros passados na chamada no script
+function exibeMsgLan(int $ano): void{
+    if ($ano > 2022) {
+        echo "Esse filme é um lançamento\n";
+    } elseif($ano > 2020 && $ano <= 2022) {
+        echo "Esse filme ainda é novo\n";
+    } else {
+        echo "Esse filme não é um lançamento\n";
+    }
+}
 
-$movieName = "Top Gun - Maverick"; 
-$releaseYear = 2022;
+function incluidoNoPlano(bool $planoPrime, int $anoLancamento): bool {
+    return $planoPrime || $anoLancamento < 2020;
+}
 
-$notes = [];
+echo "Bem-vindo(a) ao screen match!\n";
 
-$numberOfRatings = $argc - 1;
+$nomeFilme = "Top Gun - Maverick";
 
-//for (inicializacao; condicao da repeticao, incremento)
+$anoLancamento = 2022;
+
+$quantidadeDeNotas = $argc - 1;
+$notas = [];
+
 for ($contador = 1; $contador < $argc; $contador++) {
-    $notes[] = (float) $argv[$contador];
-}
-$somasDasNotas = array_sum($notes);
-
-//soma das notas
-// foreach($notes as $note){
-//     $somasDasNotas += $note;
-// }
-
-// $contador = 1;
-
-// while ($argv[$contador] != 0) {
-//     $sumOfNotes += $argv[$contador++];
-// }
-
-// existe um loop chamado do{} while(); onde a gente primeiro executa algo e dps verifica a condicao
-
-
-
-$rating = $somasDasNotas / $numberOfRatings;
-
-$primePlan = true;
-
-//echo $rating;
-$includeOnPlan = $primePlan || $releaseYear<2020;
-
-//echo $includeOnPlan;
-
-echo "Nome do filme: $movieName\n";
-echo "Nota do filme: $rating\n";
-echo "Ano de lançamento: $releaseYear\n";
-
-if ($releaseYear > 2024) {
-    echo "Esse filme é uma lançamento\n";
-}elseif($releaseYear<2022 && $releaseYear>2020){
-    echo "Relativamente novo\n";
-} else{
-    echo "Filme antigo\n";
+    $notas[] = (float) $argv[$contador];
 }
 
-$gender = match ($movieName) {
-    "Top Gun - Maverick" => "action",
-    "Thor: Ragnarok" => "heroes",
-    "Se beber nao case" => "comedy",
-    default => "genero desconhecido",
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
+$planoPrime = true;
+
+$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento); 
+
+echo "Nome do filme: " . $nomeFilme . "\n";
+echo "Nota do filme: $notaFilme\n";
+echo "Ano de lançamento: $anoLancamento\n";
+
+exibeMsgLan(2021);
+
+$genero = match ($nomeFilme) {
+    "Top Gun - Maverick" => "ação",
+    "Thor: Ragnarok" => "super-herói",
+    "Se beber não case" => "comédia",
+    default => "gênero desconhecido",
 };
 
-echo "O genero do filme é: $gender\n";
+echo "O gênero do filme é: $genero\n";
+
+$filme = [
+    "nome" => "Thor: Ragnarok",
+    "ano" => 2021,
+    "nota" => 7.8,
+    "genero" => "super-herói",
+];
 
 
-
-
-
+echo $filme["ano"];
