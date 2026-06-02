@@ -5,7 +5,7 @@ foreach($notas as $nota){
     if($nota > 6){
         echo "parabens vc foi aprovado com a nota: $nota\n";
     } else {
-        echo "reprovado com a nota: $nota\n";
+        echo "reprovado com a nota: $nota\nw";
     }
 }
 
