@@ -56,3 +56,7 @@ $filme = [
 
 
 echo $filme["ano"];
+
+var_dump($notas);
+sort($notas);
+var_dump($notas);
