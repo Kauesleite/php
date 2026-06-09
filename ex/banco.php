@@ -1,7 +1,7 @@
 <?php
 echo "Olá bem vindo ao BancoCeta\n";
 echo "==============================\n";
-$titular = 'Kauê';
+$titular = 'Luna';
 echo "Titular: $titular\n";
 $saldo = 1000.00;
 echo "Saldo atual: $saldo\n";
