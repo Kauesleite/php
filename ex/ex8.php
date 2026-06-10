@@ -1,6 +1,4 @@
 <?php
-function IMC (float $peso, float $altura): float {
-    return $peso / ($altura**2);
-}
-
-echo IMC(72.0, 1.70);
+$string = "Vinicius Dias,1997,Programador";
+$stringTratada = explode(',', $string);
+var_dump($stringTratada);

@@ -1,7 +1,11 @@
 <?php
 
-function celFah(float $grau){
-    return ($grau * 1.8) +32;
+function ordenar(array $array): array{
+    sort($array);
+    return $array;
 }
 
-echo celFah(15.0);
+$array = ["banana", "abacaxi", "laranja", "uva"];
+$arrayOrdenado = ordenar($array);
+echo "Array ordenao: ";
+print_r($arrayOrdenado);
