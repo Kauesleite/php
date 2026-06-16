@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/funcoes.php";
+require __DIR__ . "/src/funcoes.php";
 
 echo "Bem-vindo(a) ao screen match!\n";
 
@@ -63,3 +63,4 @@ var_dump($stringTratada);
 
 $filmeComoStringJson = json_encode($filme);
 file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
+var_dump($_POST);
