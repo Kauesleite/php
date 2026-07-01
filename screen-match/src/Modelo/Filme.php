@@ -1,10 +1,13 @@
 <?php
 
 class Filme {
-    private string $nome;
-    private int $anoLancamento;
-    private string $genero;
+  
     private array $notas = [];
+
+    public function __construct(public readonly string $nome = 'Nome Padrao', public readonly int $anoLancamento = 2024, public readonly string $genero = 'acao') {
+        
+        $this->notas = [];
+    }    
 
     function avalia(float $nota):void{
         $this->notas[] = $nota;
@@ -15,5 +18,7 @@ class Filme {
         $quantidadeDeNotas = count($this->notas);
         return $soma / $quantidadeDeNotas;
     }
+    // metodo de acesso/acessor //getter
+  
 }
 
